@@ -1,0 +1,29 @@
+<div class="container">
+  <button><a routerLink="/task">CreateTask</a></button>
+</div>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Task Name</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of tasks">
+        <td>{{ task.id }}</td>
+        <td>{{ task.name }}</td>
+        <td>{{ task.description }}</td>
+        <td>{{ task.status }}</td>
+        <td>
+          <button class="btn btn-primary" (click)="updateTask(task.id)">Update</button>
+          <button class="btn btn-info" (click)="viewTask(task.id)">View</button>
+          <button class="btn btn-light" (click)="updateStatus(task.id)">UpdateStatus</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
